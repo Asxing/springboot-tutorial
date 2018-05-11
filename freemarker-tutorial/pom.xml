@@ -4,20 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.holddie.springboot</groupId>
-	<artifactId>springboot-tutorial</artifactId>
+	<artifactId>freemarker-tutorial</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>elasticsearch-tutorial</module>
-    </modules>
-    <packaging>pom</packaging>
+	<packaging>jar</packaging>
 
-	<name>springboot-tutorial</name>
-	<description>Demo project for Spring Boot</description>
+	<name>freemarker-tutorial</name>
+	<description>freemarker-tutorial project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>2.0.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -25,20 +22,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-        <guava.version>23.0</guava.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -47,11 +42,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.restdocs</groupId>
-			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
