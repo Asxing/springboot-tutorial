@@ -26,11 +26,11 @@ import java.util.Map;
  * 　　┗┓┓┏━┳┓┏┛
  * 　　　┃┫┫　┃┫┫
  * 　　　┗┻┛　┗┻┛
- *
- * @Description :
  * ---------------------------------
- * @Author : Liang.Guangqing
- * @Date : Create in 2017/11/2 22:27
+ * @author HoldDie
+ * @version v1.0.0
+ * @description Dao层基类
+ * @since 2018/5/20 22:11
  */
 public interface BaseDao<T> extends BaseMapper<T> {
 
@@ -42,9 +42,9 @@ public interface BaseDao<T> extends BaseMapper<T> {
 
     List<T> selectListWithMap(Map<String, Object> map);
 
-    List<Map<String,Object>> selectListMapWithParam(T param);
+    List<Map<String, Object>> selectListMapWithParam(T param);
 
-    List<Map<String,Object>> selectListMapWithMap(Map<String, Object> map);
+    List<Map<String, Object>> selectListMapWithMap(Map<String, Object> map);
 
     List<Object> selectListObjWithParam(T param);
 

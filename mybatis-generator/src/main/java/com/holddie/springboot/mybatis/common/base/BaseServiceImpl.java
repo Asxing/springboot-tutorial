@@ -29,11 +29,11 @@ import java.util.Map;
  * 　　┗┓┓┏━┳┓┏┛
  * 　　　┃┫┫　┃┫┫
  * 　　　┗┻┛　┗┻┛
- *
- * @Description :
  * ---------------------------------
- * @Author : Liang.Guangqing
- * @Date : Create in 2017/11/2 22:23
+ * @author HoldDie
+ * @version v1.0.0
+ * @description Service实现基类
+ * @since 2018/5/20 22:11
  */
 public class BaseServiceImpl<M extends BaseDao<T>, T> extends ServiceImpl<M, T> implements BaseService<T> {
 
@@ -42,29 +42,29 @@ public class BaseServiceImpl<M extends BaseDao<T>, T> extends ServiceImpl<M, T> 
     @Autowired
     private M baseDao;
 
-    public Page<T> selectPageWithParam (Page<T> page, T param) {
-        page.setRecords(this.baseDao.selectPageWithParam(page,param));
+    public Page<T> selectPageWithParam(Page<T> page, T param) {
+        page.setRecords(this.baseDao.selectPageWithParam(page, param));
         return page;
     }
 
-    public Page<T> selectPageWithMap (Page<T> page, Map<String,Object> map) {
-        page.setRecords(this.baseDao.selectPageWithMap(page,map));
+    public Page<T> selectPageWithMap(Page<T> page, Map<String, Object> map) {
+        page.setRecords(this.baseDao.selectPageWithMap(page, map));
         return page;
     }
 
-    public List<T> selectListWithParam (T param) {
+    public List<T> selectListWithParam(T param) {
         return this.baseDao.selectListWithParam(param);
     }
 
-    public List<T> selectListWithMap (Map<String,Object> map) {
+    public List<T> selectListWithMap(Map<String, Object> map) {
         return this.baseDao.selectListWithMap(map);
     }
 
-    public List<Map<String,Object>> selectListMapWithParam(T param) {
+    public List<Map<String, Object>> selectListMapWithParam(T param) {
         return this.baseDao.selectListMapWithParam(param);
     }
 
-    public List<Map<String,Object>> selectListMapWithMap(Map<String,Object> map) {
+    public List<Map<String, Object>> selectListMapWithMap(Map<String, Object> map) {
         return this.baseDao.selectListMapWithMap(map);
     }
 
@@ -72,7 +72,7 @@ public class BaseServiceImpl<M extends BaseDao<T>, T> extends ServiceImpl<M, T> 
         return this.baseDao.selectListObjWithParam(param);
     }
 
-    public List<Object> selectListObjWithMap(Map<String,Object> map) {
+    public List<Object> selectListObjWithMap(Map<String, Object> map) {
         return this.baseDao.selectListObjWithMap(map);
     }
 
@@ -80,7 +80,7 @@ public class BaseServiceImpl<M extends BaseDao<T>, T> extends ServiceImpl<M, T> 
         return this.baseDao.selectMapWithParam(param);
     }
 
-    public Map<String, Object> selectMapWithMap(Map<String,Object> map) {
+    public Map<String, Object> selectMapWithMap(Map<String, Object> map) {
         return this.baseDao.selectMapWithMap(map);
     }
 
@@ -88,19 +88,19 @@ public class BaseServiceImpl<M extends BaseDao<T>, T> extends ServiceImpl<M, T> 
         return this.baseDao.selectObjWithParam(param);
     }
 
-    public Object selectObjWithMap(Map<String,Object> map) {
+    public Object selectObjWithMap(Map<String, Object> map) {
         return this.baseDao.selectObjWithMap(map);
     }
 
-    public T selectOneWithParam (T param) {
+    public T selectOneWithParam(T param) {
         return this.baseDao.selectOneWithParam(param);
     }
 
-    public T selectOneWithMap(Map<String,Object> map) {
+    public T selectOneWithMap(Map<String, Object> map) {
         return this.baseDao.selectOneWithMap(map);
     }
 
-    public T selectOneByObj(Serializable var1){
+    public T selectOneByObj(Serializable var1) {
         return this.baseDao.selectOneByObj(var1);
     }
 

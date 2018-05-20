@@ -26,11 +26,11 @@ import java.util.Map;
  * 　　┗┓┓┏━┳┓┏┛
  * 　　　┃┫┫　┃┫┫
  * 　　　┗┻┛　┗┻┛
- *
- * @Description : service接口 基类
  * ---------------------------------
- * @Author : Liang.Guangqing
- * @Date : Create in 2017/11/2 15:27
+ * @author HoldDie
+ * @version v1.0.0
+ * @description service接口基类
+ * @since 2018/5/20 22:11
  */
 public interface BaseService<T> extends IService<T> {
 
@@ -72,7 +72,7 @@ public interface BaseService<T> extends IService<T> {
      * @Author : Liang.Guangqing
      * @Date : Create in 2017/11/2 20:10
      */
-    List<Map<String,Object>> selectListMapWithParam(T param);
+    List<Map<String, Object>> selectListMapWithParam(T param);
 
     /**
      * @Description : 获取List<Map>数据（Map）
@@ -80,7 +80,7 @@ public interface BaseService<T> extends IService<T> {
      * @Author : Liang.Guangqing
      * @Date : Create in 2017/11/2 20:10
      */
-    List<Map<String,Object>> selectListMapWithMap(Map<String, Object> map);
+    List<Map<String, Object>> selectListMapWithMap(Map<String, Object> map);
 
     /**
      * @Description : 获取List<Object>数据（实体类）
@@ -129,7 +129,7 @@ public interface BaseService<T> extends IService<T> {
      * @Date : Create in 2017/11/2 20:02
      */
     Object selectObjWithMap(Map<String, Object> map);
-    
+
     /**
      * @Description : 获取指定数据（实体类）
      * ---------------------------------

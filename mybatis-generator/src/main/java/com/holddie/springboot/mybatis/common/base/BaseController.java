@@ -26,23 +26,19 @@ import java.util.Locale;
  * 　　┗┓┓┏━┳┓┏┛
  * 　　　┃┫┫　┃┫┫
  * 　　　┗┻┛　┗┻┛
- *
- *
- * @description : 控制器基类
  * ---------------------------------
- * @Author : Liang.Guangqing
- * @since : Create in 2017/9/20 10:25
+ * @author HoldDie
+ * @version v1.0.0
+ * @description 控制器基类
+ * @since 2018/5/20 22:11
  */
 public abstract class BaseController {
     private static Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     /**
      * 计算当前页数
-     *
-     * @param start
-     *            偏移量
-     * @param length
-     *            页大小
+     * @param start  偏移量
+     * @param length 页大小
      * @return pageNo 当前页数
      */
     public static Integer getPageNo(Integer start, Integer length) {
@@ -99,8 +95,8 @@ public abstract class BaseController {
      * 获取当年的第一天
      * @return
      */
-    public static Date getCurrYearFirst(){
-        Calendar currCal=Calendar.getInstance();
+    public static Date getCurrYearFirst() {
+        Calendar currCal = Calendar.getInstance();
         int currentYear = currCal.get(Calendar.YEAR);
         return getYearFirst(currentYear);
     }
@@ -109,8 +105,8 @@ public abstract class BaseController {
      * 获取当年的最后一天
      * @return
      */
-    public static Date getCurrYearLast(){
-        Calendar currCal=Calendar.getInstance();
+    public static Date getCurrYearLast() {
+        Calendar currCal = Calendar.getInstance();
         int currentYear = currCal.get(Calendar.YEAR);
         return getYearLast(currentYear);
     }
@@ -120,7 +116,7 @@ public abstract class BaseController {
      * @param year 年份
      * @return Date
      */
-    public static Date getYearFirst(int year){
+    public static Date getYearFirst(int year) {
         Calendar calendar = Calendar.getInstance();
         calendar.clear();
         calendar.set(Calendar.YEAR, year);
@@ -133,7 +129,7 @@ public abstract class BaseController {
      * @param year 年份
      * @return Date
      */
-    public static Date getYearLast(int year){
+    public static Date getYearLast(int year) {
         Calendar calendar = Calendar.getInstance();
         calendar.clear();
         calendar.set(Calendar.YEAR, year);
