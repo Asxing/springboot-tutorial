@@ -1,5 +1,6 @@
 package com.holddie.springboot.mybatis.config.swagger;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -20,6 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2Config {
 
+    @Bean
     public Docket createRestApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
@@ -27,6 +29,15 @@ public class Swagger2Config {
                 .apis(RequestHandlerSelectors.basePackage("com.holddie.springboot.rest.controller"))
                 .paths(PathSelectors.ant("/rest/**"))
                 .build();
+    }
+
+    @Bean
+    public Docket createRestyApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+
+                .groupName("rest分组").apiInfo(apiInfo()).select()
+
+                .paths(PathSelectors.ant("/user/**")).build();
     }
 
     private ApiInfo apiInfo(){
