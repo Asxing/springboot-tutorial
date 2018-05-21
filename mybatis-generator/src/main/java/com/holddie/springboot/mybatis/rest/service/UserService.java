@@ -1,8 +1,7 @@
-package ${package.Mapper};
+package com.holddie.springboot.mybatis.rest.service;
 
-import ${package.Entity}.${entity};
-import ${superMapperClassPackage};
-import org.springframework.stereotype.Repository;
+import com.holddie.springboot.mybatis.rest.entity.User;
+import com.holddie.springboot.mybatis.common.base.BaseService;
 
 /**
  * code is far away from bug with the animal protecting
@@ -24,11 +23,10 @@ import org.springframework.stereotype.Repository;
  * 　　　┃┫┫　┃┫┫
  * 　　　┗┻┛　┗┻┛
  * ---------------------------------
- * @author ${author}
- * @description ${entity} Mapper 接口
- * @since ${date}
+ * @author HoldDie
+ * @description User 服务接口
+ * @since 2018-05-21
  */
-@Repository
-public interface ${table.mapperName} extends ${superMapperClass}<${entity}> {
-
+public interface UserService extends BaseService<User> {
+	
 }

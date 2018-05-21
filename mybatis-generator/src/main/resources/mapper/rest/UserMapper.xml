@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.holddie.springboot.mybatis.rest.dao.UserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.holddie.springboot.mybatis.rest.entity.User">
+		<id column="id" property="id" />
+		<result column="staff_id" property="staffId" />
+		<result column="type" property="type" />
+		<result column="account" property="account" />
+		<result column="nickname" property="nickname" />
+		<result column="password" property="password" />
+		<result column="last_login" property="lastLogin" />
+		<result column="create_by" property="createBy" />
+		<result column="create_dt" property="createDt" />
+		<result column="update_by" property="updateBy" />
+		<result column="update_dt" property="updateDt" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, staff_id, type, account, nickname, password, last_login, create_by, create_dt, update_by, update_dt
+    </sql>
+
+	<select id="selectPageWithParam" resultType="com.holddie.springboot.mybatis.rest.entity.User" parameterType="com.holddie.springboot.mybatis.rest.entity.User">
+		select
+		        <include refid="Base_Column_List"/>
+						from elec_user
+	</select>
+
+	<select id="selectOneByObj" resultType="com.holddie.springboot.mybatis.rest.entity.User" parameterType="java.lang.Long">
+		select
+		        <include refid="Base_Column_List"/>
+						from elec_user
+		<where>
+			id = #{id, jdbcType=VARCHAR}
+		</where>
+	</select>
+</mapper>

@@ -30,38 +30,20 @@ import java.io.File;
 import java.util.*;
 
 /**
- *code is far away from bug with the animal protecting
- *  ┏┓　　　┏┓
- *┏┛┻━━━┛┻┓
- *┃　　　　　　　┃ 　
- *┃　　　━　　　┃
- *┃　┳┛　┗┳　┃
- *┃　　　　　　　┃
- *┃　　　┻　　　┃
- *┃　　　　　　　┃
- *┗━┓　　　┏━┛
- *　　┃　　　┃神兽保佑
- *　　┃　　　┃代码无BUG！
- *　　┃　　　┗━━━┓
- *　　┃　　　　　　　┣┓
- *　　┃　　　　　　　┏┛
- *　　┗┓┓┏━┳┓┏┛
- *　　　┃┫┫　┃┫┫
- *　　　┗┻┛　┗┻┛
- *　　
- *   @Description : MybatisPlus代码生成器
- *   ---------------------------------
- *   @Author : Liang.Guangqing
- *   @Date : Create in 2017/9/19 14:48　
+ * MySQL 代码格式化
+ * @author HoldDie
+ * @version v1.0.0
+ * @email HoldDie@163.com
+ * @date 2018/5/21 9:40
  */
 public class MysqlGenerator {
 
-    private static String projectName="mybatis-generator";
-    private static String subModule="rest";
-    private static String basePackageName="com.holddie.springboot.mybatis";
-    private static String authorName="HoldDie";
-    private static String[] table=new String[]{"elec_user"};
-    private static String[] prefix=new String[]{"elec_"};
+    private static String projectName = "mybatis-generator";
+    private static String subModule = "rest";
+    private static String basePackageName = "com.holddie.springboot.mybatis";
+    private static String authorName = "HoldDie";
+    private static String[] table = new String[]{"elec_user"};
+    private static String[] prefix = new String[]{"elec_"};
     private static File file = new File(projectName);
     private static String path = file.getAbsolutePath();
 
@@ -73,7 +55,7 @@ public class MysqlGenerator {
         AutoGenerator mpg = new AutoGenerator().setGlobalConfig(
                 // 全局配置
                 new GlobalConfig()
-                        .setOutputDir(path+"/src/main/java")//输出目录
+                        .setOutputDir(path + "/src/main/java")//输出目录
                         .setFileOverride(true)// 是否覆盖文件
                         .setActiveRecord(true)// 开启 activeRecord 模式
                         .setEnableCache(false)// XML 二级缓存
@@ -81,12 +63,12 @@ public class MysqlGenerator {
                         .setBaseColumnList(true)// XML columList
                         .setOpen(false)//生成后打开文件夹
                         .setAuthor(authorName)
-                // 自定义文件命名，注意 %s 会自动填充表实体属性！
-                 .setMapperName("%sMapper")
-                 .setXmlName("%sMapper")
-                 .setServiceName("%sService")
-                 .setServiceImplName("%sServiceImpl")
-                 .setControllerName("%sController")
+                        // 自定义文件命名，注意 %s 会自动填充表实体属性！
+                        .setMapperName("%sMapper")
+                        .setXmlName("%sMapper")
+                        .setServiceName("%sService")
+                        .setServiceImplName("%sServiceImpl")
+                        .setControllerName("%sController")
         ).setDataSource(
                 // 数据源配置
                 new DataSourceConfig()
@@ -121,16 +103,16 @@ public class MysqlGenerator {
                         // 自定义实体，公共字段
                         //.setSuperEntityColumns(new String[]{"test_id"})
                         .setTableFillList(tableFillList)
-                // 自定义 dao 父类
-                .setSuperMapperClass("com.holddie.springboot.mybatis.common.base.BaseDao")
-                // 自定义 service 父类
-                .setSuperServiceClass("com.holddie.springboot.mybatis.common.base.BaseService")
-                // 自定义 service 实现类父类
-                .setSuperServiceImplClass("com.holddie.springboot.mybatis.common.base.BaseServiceImpl")
-                // 自定义 controller 父类
-                .setSuperControllerClass("com.holddie.springboot.mybatis.common.base.BaseController")
-                // 自定义 entity 父类
-                .setSuperEntityClass("com.holddie.springboot.mybatis.common.base.BaseEntity")
+                        // 自定义 dao 父类
+                        .setSuperMapperClass("com.holddie.springboot.mybatis.common.base.BaseDao")
+                        // 自定义 service 父类
+                        .setSuperServiceClass("com.holddie.springboot.mybatis.common.base.BaseService")
+                        // 自定义 service 实现类父类
+                        .setSuperServiceImplClass("com.holddie.springboot.mybatis.common.base.BaseServiceImpl")
+                        // 自定义 controller 父类
+                        .setSuperControllerClass("com.holddie.springboot.mybatis.common.base.BaseController")
+                        // 自定义 entity 父类
+                        .setSuperEntityClass("com.holddie.springboot.mybatis.common.base.BaseEntity")
                 // 【实体】是否生成字段常量（默认 false）
                 // public static final String ID = "test_id";
                 // .setEntityColumnConstant(true)
@@ -147,13 +129,13 @@ public class MysqlGenerator {
                 // 包配置
                 new PackageConfig()
                         //.setModuleName("UserClient")
-                        .setParent(basePackageName+"."+subModule)// 自定义包路径
+                        .setParent(basePackageName + "." + subModule)// 自定义包路径
                         .setController("controller")// 这里是控制器包名，默认 web
                         .setEntity("entity")
                         .setMapper("dao")
                         .setService("service")
                         .setServiceImpl("service.impl")
-                        //.setXml("dao")
+                //.setXml("dao")
         ).setCfg(
                 // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
                 new InjectionConfig() {
@@ -167,28 +149,28 @@ public class MysqlGenerator {
                     // 自定义输出文件目录
                     @Override
                     public String outputFile(TableInfo tableInfo) {
-                        return path+"/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper.xml";
+                        return path + "/src/main/resources/mapper/" + subModule + "/" + tableInfo.getEntityName() + "Mapper.xml";
                     }
                 }))
         ).setTemplate(
                 // 关闭默认 xml 生成，调整生成 至 根目录
                 new TemplateConfig().setXml(null)
-                // 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy
-                // 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置：
+                        // 自定义模板配置，模板可以参考源码 /mybatis-plus/src/main/resources/template 使用 copy
+                        // 至您项目 src/main/resources/template 目录下，模板名称也可自定义如下配置：
 
-                //.setController("")
-                //.setEntity("")
-                //.setMapper("")
-                //.setXml("")
-                //.setService("")
-                //.setServiceImpl("")
+                        //.setController("")
+                        //.setEntity("")
+                        //.setMapper("")
+                        //.setXml("")
+                        //.setService("")
+                        //.setServiceImpl("")
 
-                .setController("/templates/vmtp/controller.java.vm")
-                .setEntity("/templates/vmtp/entity.java.vm")
-                .setMapper("/templates/vmtp/mapper.java.vm")
-                //.setXml("/template/mapper.xml.vm")
-                .setService("/templates/vmtp/service.java.vm")
-                .setServiceImpl("/templates/vmtp/serviceImpl.java.vm")
+                        .setController("/templates/vmtp/controller.java.vm")
+                        .setEntity("/templates/vmtp/entity.java.vm")
+                        .setMapper("/templates/vmtp/mapper.java.vm")
+                        //.setXml("/template/mapper.xml.vm")
+                        .setService("/templates/vmtp/service.java.vm")
+                        .setServiceImpl("/templates/vmtp/serviceImpl.java.vm")
         );
 
         // 执行生成

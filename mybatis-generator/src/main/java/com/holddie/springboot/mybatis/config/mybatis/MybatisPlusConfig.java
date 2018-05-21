@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
  * @date 2018/5/18 16:53
  */
 @Configuration
-@MapperScan(value = "com.holddie.springboot.mybatis.*.dao*")
 public class MybatisPlusConfig {
 
     /**

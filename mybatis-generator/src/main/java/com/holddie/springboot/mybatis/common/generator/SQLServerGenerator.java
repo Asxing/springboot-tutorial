@@ -16,29 +16,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * code is far away from bug with the animal protecting
- * ┏┓　　　┏┓
- * ┏┛┻━━━┛┻┓
- * ┃　　　　　　　┃
- * ┃　　　━　　　┃
- * ┃　┳┛　┗┳　┃
- * ┃　　　　　　　┃
- * ┃　　　┻　　　┃
- * ┃　　　　　　　┃
- * ┗━┓　　　┏━┛
- * 　　┃　　　┃神兽保佑
- * 　　┃　　　┃代码无BUG！
- * 　　┃　　　┗━━━┓
- * 　　┃　　　　　　　┣┓
- * 　　┃　　　　　　　┏┛
- * 　　┗┓┓┏━┳┓┏┛
- * 　　　┃┫┫　┃┫┫
- * 　　　┗┻┛　┗┻┛
  *
- * @Description : SQLServer代码生成器
- * ---------------------------------
- * @Author : Liang.Guangqing
- * @Date : Create in 2017/12/5 11:24
+ * @author HoldDie
+ * @version v1.0.0
+ * @email HoldDie@163.com
+ * @date 2018/5/21 9:40
  */
 public class SQLServerGenerator {
 

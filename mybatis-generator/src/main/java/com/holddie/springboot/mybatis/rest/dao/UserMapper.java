@@ -1,8 +1,11 @@
-package ${package.Mapper};
+package com.holddie.springboot.mybatis.rest.dao;
 
-import ${package.Entity}.${entity};
-import ${superMapperClassPackage};
+import com.holddie.springboot.mybatis.rest.entity.User;
+import com.holddie.springboot.mybatis.common.base.BaseDao;
 import org.springframework.stereotype.Repository;
+import com.baomidou.mybatisplus.plugins.Page;
+
+import java.util.List;
 
 /**
  * code is far away from bug with the animal protecting
@@ -24,11 +27,11 @@ import org.springframework.stereotype.Repository;
  * 　　　┃┫┫　┃┫┫
  * 　　　┗┻┛　┗┻┛
  * ---------------------------------
- * @author ${author}
- * @description ${entity} Mapper 接口
- * @since ${date}
+ * @author HoldDie
+ * @description User Mapper 接口
+ * @since 2018-05-21
  */
 @Repository
-public interface ${table.mapperName} extends ${superMapperClass}<${entity}> {
+public interface UserMapper extends BaseDao<User> {
 
 }
