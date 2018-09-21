@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.holddie.boot.sourcecode.TestConfiguration,com.holddie.boot.sourcecode.TestConfiguration1
